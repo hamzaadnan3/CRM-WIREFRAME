@@ -11,9 +11,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <div style="background-image: url(https://www.tftdryair.com/wp-content/uploads/2019/02/3d-background.jpg);
- background-repeat: no-repeat; background-size: 100% 100%; height: 100vh;">
+<style>
+    @keyframes zoomInOut {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .bg-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        animation: zoomInOut 10s infinite;
+    }
+</style>
+</head>
+
+<body> 
+<div class="bg-animation">
+    <img src="https://www.tftdryair.com/wp-content/uploads/2019/02/3d-background.jpg" alt="Background Image">
+</div>
+
         <!-- navbar -->
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -38,7 +67,7 @@
             </div>
         </nav>
 
-
+        <div class="container w-100" >
         <!-- sidebar -->
 
 
@@ -94,8 +123,8 @@
             crossorigin="anonymous"></script>
             <main>
                 <!-- Sign Up -->
-                <div class="rounded-5 m-auto mt-5 p-3 d-flex flex-column align-items-center border border-black border-1 w-25 shadow-lg rounded"
-                     style="background-image: url(https://img.freepik.com/free-vector/beautiful-blue-watercolor-texture-background_1035-20478.jpg?size=626&ext=jpg&ga=GA1.1.162227864.1686034352&semt=ais);">
+                <div class="rounded-5 m-auto mt-3 p-3 d-flex flex-column align-items-center border border-black border-1 w-25 shadow-lg rounded"
+                     style="background-image: url(https://img.freepik.com/free-vector/beautiful-blue-watercolor-texture-background_1035-20478.jpg?size=626&ext=jpg&ga=GA1.1.162227864.1686034352&semt=ais); transform: perspective(800px) rotateX(20deg);">
                     <form>
                         <div class="mb-3">
                             <label for="nameInput" class="form-label fw-bold">Name</label>
