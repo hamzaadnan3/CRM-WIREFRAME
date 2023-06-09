@@ -8,7 +8,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <style>
+  .somecard:hover {
+    transform: translateY(-5px);
+    
+    background-color: lightblue;
+  }
+  .somecard:hover .fa {
+    transform: translateY(-2px);
+  } 
+
+ </style>
 </head>
 
 <body>
@@ -39,8 +50,6 @@
 
 
   <!-- sidebar -->
-
-
 
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -89,239 +98,145 @@
   </div>
 
 
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 
 
   <main>
+    <div class="d-flex justify-content-evenly w-75 m-auto mt-3 pt-1 shadow rounded">
+      <h2 class="fw-bold ">Dashboard</h2>
+    </div>  
+    <!-- Summary Cards -->
 
-    <!-- Modal 1-->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel1">Delete Customer</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="d-flex justify-content-evenly w-75 m-auto pt-1 my-3">
+      <div class="card somecard rounded" style="width: 15rem;">
+        <div class="card-body shadow">
+          <h6 class="card-title fw-bold">New User</h6>
+          <h1 class="card-text text-center">28</h1>
+          <div class="d-flex justify-content-center">
+            <i class="fa fa-sort-up fa-lg align-items-center mt-2" style="color: #04ff00;"></i>
+            <p class="text-center">11%</p>
           </div>
-          <div class="modal-body">
-            Are you sure you want to delete this customer?
+        </div>
+      </div>
+      <div class="card somecard rounded" style="width: 15rem;">
+        <div class="card-body shadow">
+          <h6 class="card-title fw-bold">Revenue, $</h6>
+          <h1 class="card-text text-center">$400k</h1>
+          <div class="d-flex justify-content-center">
+            <i class="fa fa-sort-up fa-lg align-items-center mt-2" style="color: #04ff00;"></i>
+            <p class="text-center">21.23%</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary">Yes</button>
+        </div>
+      </div>
+      <div class="card  somecard rounded" style="width: 15rem;">
+        <div class="card-body shadow">
+          <h6 class="card-title fw-bold">Conversions</h6>
+          <h1 class="card-text text-center">17%</h1>
+          <div class="d-flex justify-content-center">
+            <i class="fa fa-sort-down fa-lg align-items-center" style="color: #ff0000;"></i>
+            <p class="text-center">7.23%</p>
+          </div>
+        </div>
+      </div>
+      <div class="card somecard rounded" style="width: 15rem;">
+        <div class="card-body shadow">
+          <h6 class="card-title fw-bold">Net Revenue, $</h6>
+          <h1 class="card-text text-center">$198k</h1>
+          <div class="d-flex justify-content-center">
+            <i class="fa fa-sort-up fa-lg align-items-center mt-2" style="color: #04ff00;"></i>
+            <p class="text-center">18.23%</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Modal 2 -->
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel2">Delete Customer</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to delete this customer?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary">Yes</button>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <table class="table  mt-5 table-striped w-75 m-auto" style="transform: perspective(800px) rotateX(20deg);">
+
+    <!-- Chart Representation-->
+    <div class=" card w-75 m-auto mt-3 pt-1 border border-light-subtle shadow rounded">
+
+      <div class="card-body">
+        <h5 class="card-title position-absolute top-0 end-0">
+          <button onclick="document.getElementById('saleschart').src='monthlychart.jpg'" type="button"
+            class="btn btn-primary mt-3 me-2">Montly</button>
+          <button onclick="document.getElementById('saleschart').src='weeklychart.jpg'" type="button"
+            class="btn btn-primary mt-3 me-4">Weekly</button>
+
+
+        </h5>
+        <img src="monthlychart.jpg" class="card-img-bottom " id="saleschart" alt="..." style="height: px;">
+
+      </div>
+
+    </div>
+
+
+   <!-- Sales by product -->
+<!-- Sales by product -->
+<div class="w-75 m-auto my-4 pt-1 border border-light-subtle shadow-lg rounded">
+  <div class="ms-2 m-auto rounded">
+    <h3>Sales by product</h3>
+  </div>
+  <div class="table-responsive rounded">
+    <table class="table mt-1 m-auto">
       <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Address</th>
-          <th scope="col">Customer Id</th>
-          <th scope="col">Action</th>
+        <tr class="table-secondary">
+          <th scope="col">Products</th>
+          <th scope="col">Amount</th>
+          <th scope="col">% Sold</th>
+          <th scope="col">Percentages</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-
-          </td>
-
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel3">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete this customer?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
-              </div>
+          <td>Product-1</td>
+          <td>$385k</td>
+          <td>70.15%</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
             </div>
           </td>
-
         </tr>
         <tr>
-          <th scope="row">4</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel4">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete this customer?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
-              </div>
+          <td>Product-2</td>
+          <td>$165k</td>
+          <td>35.26%</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%"></div>
             </div>
           </td>
-
         </tr>
         <tr>
-          <th scope="row">5</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel5">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete this customer?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
-              </div>
+          <td>Product-3</td>
+          <td>$270k</td>
+          <td>55.26%</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar bg-info" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
             </div>
           </td>
-
         </tr>
         <tr>
-          <th scope="row">6</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>Lahore,Punjab,Pakistan</td>
-          <td>12345</td>
-          <td><button type="button" class=" btn bg-grey"><a href="Customer_Edit.html"> <i
-                  class="fa fa-pencil me-0"></i></a></button>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-grey" data-bs-toggle="modal" data-bs-target="#exampleModal6">
-              <i class="fa fa-trash fa-sm " style="color:green"> </i>
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel6">Delete Customer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete this customer?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
-              </div>
+          <td>Product-4</td>
+          <td>$97k</td>
+          <td>20.22%</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
             </div>
           </td>
-
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
 
 
 
